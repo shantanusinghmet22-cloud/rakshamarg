@@ -1,0 +1,30 @@
+[
+ {
+  "segments": 264,
+  "p50_ms": 4.4,
+  "p95_ms": 11.9,
+  "context_setup_ms": 43,
+  "heap_mb": 6
+ },
+ {
+  "segments": 1104,
+  "p50_ms": 20.8,
+  "p95_ms": 39.7,
+  "context_setup_ms": 17,
+  "heap_mb": 14
+ },
+ {
+  "segments": 4512,
+  "p50_ms": 171.9,
+  "p95_ms": 274.3,
+  "context_setup_ms": 54,
+  "heap_mb": 21
+ },
+ {
+  "segments": 18240,
+  "p50_ms": 1678.8,
+  "p95_ms": 3670.7,
+  "context_setup_ms": 203,
+  "heap_mb": 47
+ }
+]

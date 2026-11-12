@@ -1,0 +1,380 @@
+{
+ "holdout": {
+  "faithful": {
+   "mb2_blend": {
+    "mean": 11.4,
+    "sd": 2.347,
+    "min": 7.7,
+    "max": 14.3
+   },
+   "mb2_model": {
+    "mean": 11.0,
+    "sd": 2.023,
+    "min": 7.2,
+    "max": 12.6
+   },
+   "mb2_road": {
+    "mean": 9.94,
+    "sd": 1.638,
+    "min": 7.0,
+    "max": 11.7
+   },
+   "mb2_braking": {
+    "mean": 7.3,
+    "sd": 5.891,
+    "min": -0.7,
+    "max": 13.9
+   },
+   "mb2_crash": {
+    "mean": 3.82,
+    "sd": 6.769,
+    "min": -8.9,
+    "max": 9.3
+   },
+   "seg_model": {
+    "mean": 0.794,
+    "sd": 0.019,
+    "min": 0.767,
+    "max": 0.821
+   },
+   "seg_blend": {
+    "mean": 0.763,
+    "sd": 0.029,
+    "min": 0.717,
+    "max": 0.806
+   },
+   "seg_braking": {
+    "mean": 0.652,
+    "sd": 0.027,
+    "min": 0.601,
+    "max": 0.679
+   },
+   "policy_cut": {
+    "mean": 12.92,
+    "sd": 2.913,
+    "min": 8.2,
+    "max": 17.1
+   },
+   "policy_time": {
+    "mean": 1.806,
+    "sd": 0.48,
+    "min": 0.98,
+    "max": 2.2
+   },
+   "safer": {
+    "mean": 97.72,
+    "sd": 1.573,
+    "min": 95.8,
+    "max": 100.0
+   },
+   "coverage": {
+    "mean": 97.42,
+    "sd": 0.542,
+    "min": 96.7,
+    "max": 98.1
+   },
+   "blend_minus_road": {
+    "mean": 1.4600000000000006,
+    "sd": 1.1876026271442817,
+    "per_world": [
+     0.7,
+     2.6,
+     -0.3,
+     1.4,
+     2.9
+    ],
+    "losses": 1
+   }
+  },
+  "noisy": {
+   "mb2_blend": {
+    "mean": 11.18,
+    "sd": 1.813,
+    "min": 7.8,
+    "max": 12.9
+   },
+   "mb2_model": {
+    "mean": 9.1,
+    "sd": 1.766,
+    "min": 7.0,
+    "max": 11.6
+   },
+   "mb2_road": {
+    "mean": 9.46,
+    "sd": 1.646,
+    "min": 6.5,
+    "max": 11.3
+   },
+   "mb2_braking": {
+    "mean": 6.24,
+    "sd": 5.64,
+    "min": -0.6,
+    "max": 13.1
+   },
+   "mb2_crash": {
+    "mean": 4.72,
+    "sd": 3.689,
+    "min": -1.0,
+    "max": 8.2
+   },
+   "seg_model": {
+    "mean": 0.749,
+    "sd": 0.024,
+    "min": 0.718,
+    "max": 0.775
+   },
+   "seg_blend": {
+    "mean": 0.733,
+    "sd": 0.036,
+    "min": 0.686,
+    "max": 0.784
+   },
+   "seg_braking": {
+    "mean": 0.573,
+    "sd": 0.025,
+    "min": 0.535,
+    "max": 0.607
+   },
+   "policy_cut": {
+    "mean": 12.96,
+    "sd": 3.895,
+    "min": 6.1,
+    "max": 17.4
+   },
+   "policy_time": {
+    "mean": 1.648,
+    "sd": 0.376,
+    "min": 1.13,
+    "max": 2.08
+   },
+   "safer": {
+    "mean": 97.2,
+    "sd": 2.384,
+    "min": 93.1,
+    "max": 100.0
+   },
+   "coverage": {
+    "mean": 96.38,
+    "sd": 0.979,
+    "min": 95.0,
+    "max": 97.7
+   },
+   "blend_minus_road": {
+    "mean": 1.7199999999999995,
+    "sd": 0.2481934729198172,
+    "per_world": [
+     1.3,
+     1.6,
+     1.8,
+     1.9,
+     2.0
+    ],
+    "losses": 0
+   }
+  },
+  "deferral": {
+   "trips": 2394,
+   "defers": 110,
+   "switches": 713,
+   "deferred_alternatives_truly_safer_pct": 91.8
+  },
+  "integrity": {
+   "decisions_checked": 12000,
+   "inconsistent": 0
+  }
+ },
+ "development": {
+  "faithful": {
+   "mb2_blend": {
+    "mean": 11.48,
+    "sd": 1.774,
+    "min": 8.7,
+    "max": 14.0
+   },
+   "mb2_model": {
+    "mean": 10.54,
+    "sd": 1.086,
+    "min": 9.0,
+    "max": 12.3
+   },
+   "mb2_road": {
+    "mean": 9.96,
+    "sd": 1.626,
+    "min": 7.6,
+    "max": 11.7
+   },
+   "mb2_braking": {
+    "mean": 9.16,
+    "sd": 2.278,
+    "min": 6.7,
+    "max": 13.3
+   },
+   "mb2_crash": {
+    "mean": 7.16,
+    "sd": 2.928,
+    "min": 2.7,
+    "max": 11.9
+   },
+   "seg_model": {
+    "mean": 0.799,
+    "sd": 0.012,
+    "min": 0.777,
+    "max": 0.812
+   },
+   "seg_blend": {
+    "mean": 0.749,
+    "sd": 0.018,
+    "min": 0.726,
+    "max": 0.769
+   },
+   "seg_braking": {
+    "mean": 0.636,
+    "sd": 0.015,
+    "min": 0.619,
+    "max": 0.66
+   },
+   "policy_cut": {
+    "mean": 12.08,
+    "sd": 3.047,
+    "min": 7.7,
+    "max": 15.2
+   },
+   "policy_time": {
+    "mean": 1.696,
+    "sd": 0.305,
+    "min": 1.29,
+    "max": 2.23
+   },
+   "safer": {
+    "mean": 96.6,
+    "sd": 2.882,
+    "min": 91.9,
+    "max": 100.0
+   },
+   "coverage": {
+    "mean": 95.04,
+    "sd": 2.192,
+    "min": 91.8,
+    "max": 98.4
+   },
+   "blend_minus_road": {
+    "mean": 1.52,
+    "sd": 0.8255906976220119,
+    "per_world": [
+     2.2,
+     1.1,
+     0.1,
+     1.9,
+     2.3
+    ],
+    "losses": 0
+   }
+  },
+  "noisy": {
+   "mb2_blend": {
+    "mean": 11.34,
+    "sd": 1.67,
+    "min": 8.2,
+    "max": 13.0
+   },
+   "mb2_model": {
+    "mean": 10.2,
+    "sd": 1.682,
+    "min": 7.2,
+    "max": 12.4
+   },
+   "mb2_road": {
+    "mean": 8.52,
+    "sd": 1.577,
+    "min": 6.5,
+    "max": 10.8
+   },
+   "mb2_braking": {
+    "mean": 8.04,
+    "sd": 2.528,
+    "min": 5.1,
+    "max": 12.7
+   },
+   "mb2_crash": {
+    "mean": 5.92,
+    "sd": 3.072,
+    "min": 1.0,
+    "max": 10.4
+   },
+   "seg_model": {
+    "mean": 0.747,
+    "sd": 0.023,
+    "min": 0.717,
+    "max": 0.775
+   },
+   "seg_blend": {
+    "mean": 0.721,
+    "sd": 0.021,
+    "min": 0.696,
+    "max": 0.757
+   },
+   "seg_braking": {
+    "mean": 0.545,
+    "sd": 0.02,
+    "min": 0.52,
+    "max": 0.566
+   },
+   "policy_cut": {
+    "mean": 11.04,
+    "sd": 2.382,
+    "min": 7.0,
+    "max": 13.7
+   },
+   "policy_time": {
+    "mean": 1.378,
+    "sd": 0.269,
+    "min": 1.0,
+    "max": 1.77
+   },
+   "safer": {
+    "mean": 97.1,
+    "sd": 3.212,
+    "min": 91.5,
+    "max": 100.0
+   },
+   "coverage": {
+    "mean": 96.16,
+    "sd": 2.49,
+    "min": 93.0,
+    "max": 99.9
+   },
+   "blend_minus_road": {
+    "mean": 2.82,
+    "sd": 1.6773789077009404,
+    "per_world": [
+     2.8,
+     1.7,
+     0.5,
+     5.4,
+     3.7
+    ],
+    "losses": 0
+   }
+  },
+  "deferral": {
+   "trips": 2398,
+   "defers": 68,
+   "switches": 691,
+   "deferred_alternatives_truly_safer_pct": 86.8
+  },
+  "integrity": {
+   "decisions_checked": 12000,
+   "inconsistent": 0
+  }
+ },
+ "review_cost": {
+  "review_share": 0.04594820384294068,
+  "mean_trip_min": 45.973079497907946,
+  "wait_cost_pct": {
+   "5": 0.49972945411489783,
+   "10": 0.9994589082297957,
+   "20": 1.9989178164595913,
+   "30": 2.998376724689387
+  }
+ }
+}

@@ -1,0 +1,1358 @@
+{
+ "runs": [
+  "faithful_seed202",
+  "faithful_seed303",
+  "faithful_seed404",
+  "faithful_seed505",
+  "faithful_seed606",
+  "noisy_seed202",
+  "noisy_seed303",
+  "noisy_seed404",
+  "noisy_seed505",
+  "noisy_seed606"
+ ],
+ "source_sha256_12": "d26a6e6bfe91",
+ "dispatch_scorer": "RakshaMarg + braking blend (geometric: model rate x sqrt(braking rate / model mean rate))",
+ "note": "true holdout: seeds 202-606 were first run after the v0.3 method was frozen (fingerprint unchanged)",
+ "segments_range": [
+  527,
+  540
+ ],
+ "integrity": {
+  "decisions_checked": 12000,
+  "inconsistent": 0
+ },
+ "no_legal_route_trips_dispatch": 6,
+ "deferral_all_worlds": {
+  "trips": 2394,
+  "defers": 110,
+  "switches": 713,
+  "deferred_alternatives_truly_safer_pct": 91.8
+ },
+ "faithful": {
+  "n_worlds": 5,
+  "segments": {
+   "Harsh brakes per road-km (naive)": {
+    "spearman_segments": {
+     "mean": 0.064,
+     "sd": 0.076,
+     "min": -0.049,
+     "max": 0.188
+    },
+    "spearman_sparse_segments": {
+     "mean": -0.04,
+     "sd": 0.061,
+     "min": -0.093,
+     "max": 0.067
+    },
+    "spearman_segment_x_context": {
+     "mean": 0.059,
+     "sd": 0.071,
+     "min": -0.049,
+     "max": 0.175
+    },
+    "top10pct_lift": {
+     "mean": 1.832,
+     "sd": 0.256,
+     "min": 1.55,
+     "max": 2.23
+    },
+    "deviance_explained_pct": {
+     "mean": -12.46,
+     "sd": 3.312,
+     "min": -17.7,
+     "max": -8.4
+    }
+   },
+   "Crash history (smoothed rate)": {
+    "spearman_segments": {
+     "mean": 0.353,
+     "sd": 0.029,
+     "min": 0.309,
+     "max": 0.387
+    },
+    "spearman_sparse_segments": {
+     "mean": 0.218,
+     "sd": 0.06,
+     "min": 0.122,
+     "max": 0.275
+    },
+    "spearman_segment_x_context": {
+     "mean": 0.31,
+     "sd": 0.024,
+     "min": 0.273,
+     "max": 0.339
+    },
+    "top10pct_lift": {
+     "mean": 2.844,
+     "sd": 0.411,
+     "min": 2.13,
+     "max": 3.29
+    },
+    "deviance_explained_pct": {
+     "mean": 6.08,
+     "sd": 2.681,
+     "min": 2.2,
+     "max": 10.5
+    }
+   },
+   "Harsh brakes per veh-km (smoothed)": {
+    "spearman_segments": {
+     "mean": 0.652,
+     "sd": 0.027,
+     "min": 0.601,
+     "max": 0.679
+    },
+    "spearman_sparse_segments": {
+     "mean": 0.457,
+     "sd": 0.023,
+     "min": 0.426,
+     "max": 0.495
+    },
+    "spearman_segment_x_context": {
+     "mean": 0.549,
+     "sd": 0.022,
+     "min": 0.513,
+     "max": 0.583
+    },
+    "top10pct_lift": {
+     "mean": 2.948,
+     "sd": 0.559,
+     "min": 2.19,
+     "max": 3.64
+    },
+    "deviance_explained_pct": {
+     "mean": 10.58,
+     "sd": 2.696,
+     "min": 6.9,
+     "max": 13.1
+    }
+   },
+   "Road features only": {
+    "spearman_segments": {
+     "mean": 0.725,
+     "sd": 0.025,
+     "min": 0.694,
+     "max": 0.758
+    },
+    "spearman_sparse_segments": {
+     "mean": 0.671,
+     "sd": 0.048,
+     "min": 0.604,
+     "max": 0.742
+    },
+    "spearman_segment_x_context": {
+     "mean": 0.837,
+     "sd": 0.005,
+     "min": 0.831,
+     "max": 0.843
+    },
+    "top10pct_lift": {
+     "mean": 3.152,
+     "sd": 0.41,
+     "min": 2.51,
+     "max": 3.55
+    },
+    "deviance_explained_pct": {
+     "mean": 18.28,
+     "sd": 2.407,
+     "min": 15.0,
+     "max": 20.5
+    }
+   },
+   "Road features + EB": {
+    "spearman_segments": {
+     "mean": 0.731,
+     "sd": 0.025,
+     "min": 0.706,
+     "max": 0.762
+    },
+    "spearman_sparse_segments": {
+     "mean": 0.672,
+     "sd": 0.05,
+     "min": 0.601,
+     "max": 0.743
+    },
+    "spearman_segment_x_context": {
+     "mean": 0.839,
+     "sd": 0.005,
+     "min": 0.832,
+     "max": 0.844
+    },
+    "top10pct_lift": {
+     "mean": 3.306,
+     "sd": 0.36,
+     "min": 2.84,
+     "max": 3.81
+    },
+    "deviance_explained_pct": {
+     "mean": 18.6,
+     "sd": 2.45,
+     "min": 15.6,
+     "max": 20.7
+    }
+   },
+   "Road + telematics, no EB": {
+    "spearman_segments": {
+     "mean": 0.794,
+     "sd": 0.019,
+     "min": 0.764,
+     "max": 0.818
+    },
+    "spearman_sparse_segments": {
+     "mean": 0.711,
+     "sd": 0.031,
+     "min": 0.666,
+     "max": 0.764
+    },
+    "spearman_segment_x_context": {
+     "mean": 0.866,
+     "sd": 0.011,
+     "min": 0.848,
+     "max": 0.879
+    },
+    "top10pct_lift": {
+     "mean": 3.11,
+     "sd": 0.426,
+     "min": 2.42,
+     "max": 3.49
+    },
+    "deviance_explained_pct": {
+     "mean": 18.3,
+     "sd": 2.235,
+     "min": 15.3,
+     "max": 20.6
+    }
+   },
+   "RakshaMarg, crash-only target": {
+    "spearman_segments": {
+     "mean": 0.694,
+     "sd": 0.03,
+     "min": 0.652,
+     "max": 0.737
+    },
+    "spearman_sparse_segments": {
+     "mean": 0.637,
+     "sd": 0.057,
+     "min": 0.532,
+     "max": 0.698
+    },
+    "spearman_segment_x_context": {
+     "mean": 0.744,
+     "sd": 0.019,
+     "min": 0.718,
+     "max": 0.765
+    },
+    "top10pct_lift": {
+     "mean": 3.138,
+     "sd": 0.417,
+     "min": 2.56,
+     "max": 3.75
+    },
+    "deviance_explained_pct": {
+     "mean": 16.12,
+     "sd": 2.578,
+     "min": 11.6,
+     "max": 18.5
+    }
+   },
+   "RakshaMarg, trees only (no GLM base)": {
+    "spearman_segments": {
+     "mean": 0.783,
+     "sd": 0.024,
+     "min": 0.746,
+     "max": 0.811
+    },
+    "spearman_sparse_segments": {
+     "mean": 0.693,
+     "sd": 0.036,
+     "min": 0.643,
+     "max": 0.743
+    },
+    "spearman_segment_x_context": {
+     "mean": 0.852,
+     "sd": 0.012,
+     "min": 0.835,
+     "max": 0.866
+    },
+    "top10pct_lift": {
+     "mean": 3.206,
+     "sd": 0.332,
+     "min": 2.79,
+     "max": 3.66
+    },
+    "deviance_explained_pct": {
+     "mean": 18.46,
+     "sd": 2.397,
+     "min": 15.3,
+     "max": 20.7
+    }
+   },
+   "RakshaMarg (full)": {
+    "spearman_segments": {
+     "mean": 0.794,
+     "sd": 0.019,
+     "min": 0.767,
+     "max": 0.821
+    },
+    "spearman_sparse_segments": {
+     "mean": 0.709,
+     "sd": 0.033,
+     "min": 0.658,
+     "max": 0.763
+    },
+    "spearman_segment_x_context": {
+     "mean": 0.867,
+     "sd": 0.01,
+     "min": 0.85,
+     "max": 0.88
+    },
+    "top10pct_lift": {
+     "mean": 3.218,
+     "sd": 0.33,
+     "min": 2.81,
+     "max": 3.66
+    },
+    "deviance_explained_pct": {
+     "mean": 18.6,
+     "sd": 2.3,
+     "min": 15.8,
+     "max": 20.7
+    }
+   },
+   "RakshaMarg + braking blend": {
+    "spearman_segments": {
+     "mean": 0.763,
+     "sd": 0.029,
+     "min": 0.717,
+     "max": 0.806
+    },
+    "spearman_sparse_segments": {
+     "mean": 0.685,
+     "sd": 0.041,
+     "min": 0.617,
+     "max": 0.744
+    },
+    "spearman_segment_x_context": {
+     "mean": 0.846,
+     "sd": 0.018,
+     "min": 0.821,
+     "max": 0.873
+    },
+    "top10pct_lift": {
+     "mean": 3.288,
+     "sd": 0.519,
+     "min": 2.53,
+     "max": 4.09
+    },
+    "deviance_explained_pct": {
+     "mean": 18.78,
+     "sd": 1.969,
+     "min": 16.5,
+     "max": 21.2
+    }
+   },
+   "Oracle (true risk)": {
+    "spearman_segments": {
+     "mean": 1.0,
+     "sd": 0.0,
+     "min": 1.0,
+     "max": 1.0
+    },
+    "spearman_sparse_segments": {
+     "mean": 1.0,
+     "sd": 0.0,
+     "min": 1.0,
+     "max": 1.0
+    },
+    "spearman_segment_x_context": {
+     "mean": 1.0,
+     "sd": 0.0,
+     "min": 1.0,
+     "max": 1.0
+    },
+    "top10pct_lift": {
+     "mean": 3.418,
+     "sd": 0.544,
+     "min": 2.61,
+     "max": 4.0
+    },
+    "deviance_explained_pct": {
+     "mean": 19.3,
+     "sd": 2.997,
+     "min": 15.2,
+     "max": 21.9
+    }
+   }
+  },
+  "matched_budget": {
+   "Crash history": {
+    "+1%": {
+     "mean": 2.04,
+     "sd": 5.55,
+     "min": -8.0,
+     "max": 7.3
+    },
+    "+2%": {
+     "mean": 3.82,
+     "sd": 6.769,
+     "min": -8.9,
+     "max": 9.3
+    },
+    "+4%": {
+     "mean": 6.2,
+     "sd": 6.925,
+     "min": -6.5,
+     "max": 13.1
+    }
+   },
+   "Harsh brakes per veh-km": {
+    "+1%": {
+     "mean": 4.58,
+     "sd": 5.457,
+     "min": -3.7,
+     "max": 9.5
+    },
+    "+2%": {
+     "mean": 7.3,
+     "sd": 5.891,
+     "min": -0.7,
+     "max": 13.9
+    },
+    "+4%": {
+     "mean": 10.88,
+     "sd": 6.962,
+     "min": 1.5,
+     "max": 20.2
+    }
+   },
+   "RakshaMarg": {
+    "+1%": {
+     "mean": 7.7,
+     "sd": 1.54,
+     "min": 4.8,
+     "max": 9.3
+    },
+    "+2%": {
+     "mean": 11.0,
+     "sd": 2.023,
+     "min": 7.2,
+     "max": 12.6
+    },
+    "+4%": {
+     "mean": 16.5,
+     "sd": 3.017,
+     "min": 11.9,
+     "max": 20.1
+    }
+   },
+   "RakshaMarg + braking blend": {
+    "+1%": {
+     "mean": 8.1,
+     "sd": 1.793,
+     "min": 5.2,
+     "max": 10.3
+    },
+    "+2%": {
+     "mean": 11.4,
+     "sd": 2.347,
+     "min": 7.7,
+     "max": 14.3
+    },
+    "+4%": {
+     "mean": 18.2,
+     "sd": 3.293,
+     "min": 13.5,
+     "max": 21.6
+    }
+   },
+   "RakshaMarg + braking blend, point estimate": {
+    "+1%": {
+     "mean": 8.08,
+     "sd": 1.799,
+     "min": 5.2,
+     "max": 10.4
+    },
+    "+2%": {
+     "mean": 11.42,
+     "sd": 2.359,
+     "min": 7.7,
+     "max": 14.3
+    },
+    "+4%": {
+     "mean": 18.1,
+     "sd": 3.242,
+     "min": 13.5,
+     "max": 21.5
+    }
+   },
+   "Road features only": {
+    "+1%": {
+     "mean": 7.14,
+     "sd": 1.528,
+     "min": 4.6,
+     "max": 9.3
+    },
+    "+2%": {
+     "mean": 9.94,
+     "sd": 1.638,
+     "min": 7.0,
+     "max": 11.7
+    },
+    "+4%": {
+     "mean": 16.16,
+     "sd": 2.741,
+     "min": 11.8,
+     "max": 20.1
+    }
+   }
+  },
+  "policy": {
+   "RakshaMarg": {
+    "true_risk_reduction_pct": {
+     "mean": 13.24,
+     "sd": 2.281,
+     "min": 9.7,
+     "max": 16.8
+    },
+    "extra_travel_time_pct": {
+     "mean": 2.312,
+     "sd": 0.468,
+     "min": 1.71,
+     "max": 2.9
+    },
+    "switches_truly_safer_pct": {
+     "mean": 95.88,
+     "sd": 4.466,
+     "min": 87.8,
+     "max": 100.0
+    },
+    "deferred_pct": {
+     "mean": 2.58,
+     "sd": 2.878,
+     "min": 0.0,
+     "max": 7.5
+    }
+   },
+   "RakshaMarg + braking blend": {
+    "true_risk_reduction_pct": {
+     "mean": 12.92,
+     "sd": 2.913,
+     "min": 8.2,
+     "max": 17.1
+    },
+    "extra_travel_time_pct": {
+     "mean": 1.806,
+     "sd": 0.48,
+     "min": 0.98,
+     "max": 2.2
+    },
+    "switches_truly_safer_pct": {
+     "mean": 97.72,
+     "sd": 1.573,
+     "min": 95.8,
+     "max": 100.0
+    },
+    "deferred_pct": {
+     "mean": 4.5,
+     "sd": 3.425,
+     "min": 1.7,
+     "max": 11.2
+    }
+   },
+   "Harsh brakes per veh-km": {
+    "true_risk_reduction_pct": {
+     "mean": 7.36,
+     "sd": 4.5,
+     "min": 2.0,
+     "max": 14.7
+    },
+    "extra_travel_time_pct": {
+     "mean": 2.036,
+     "sd": 0.266,
+     "min": 1.78,
+     "max": 2.46
+    },
+    "switches_truly_safer_pct": {
+     "mean": 86.58,
+     "sd": 7.328,
+     "min": 77.5,
+     "max": 97.6
+    },
+    "deferred_pct": {
+     "mean": 0.0,
+     "sd": 0.0,
+     "min": 0.0,
+     "max": 0.0
+    }
+   },
+   "Crash history": {
+    "true_risk_reduction_pct": {
+     "mean": 5.98,
+     "sd": 4.099,
+     "min": -0.4,
+     "max": 11.7
+    },
+    "extra_travel_time_pct": {
+     "mean": 2.764,
+     "sd": 0.336,
+     "min": 2.14,
+     "max": 3.04
+    },
+    "switches_truly_safer_pct": {
+     "mean": 73.9,
+     "sd": 7.08,
+     "min": 66.2,
+     "max": 86.0
+    },
+    "deferred_pct": {
+     "mean": 0.0,
+     "sd": 0.0,
+     "min": 0.0,
+     "max": 0.0
+    }
+   },
+   "Road features only": {
+    "true_risk_reduction_pct": {
+     "mean": 14.64,
+     "sd": 2.239,
+     "min": 11.4,
+     "max": 18.1
+    },
+    "extra_travel_time_pct": {
+     "mean": 2.404,
+     "sd": 0.301,
+     "min": 2.06,
+     "max": 2.77
+    },
+    "switches_truly_safer_pct": {
+     "mean": 95.58,
+     "sd": 3.273,
+     "min": 89.4,
+     "max": 98.8
+    },
+    "deferred_pct": {
+     "mean": 0.0,
+     "sd": 0.0,
+     "min": 0.0,
+     "max": 0.0
+    }
+   }
+  },
+  "band90_coverage": {
+   "mean": 97.42,
+   "sd": 0.542,
+   "min": 96.7,
+   "max": 98.1
+  },
+  "band90_coverage_by_context": {
+   "day/clear": {
+    "mean": 95.56,
+    "sd": 4.522,
+    "min": 89.8,
+    "max": 100.0
+   },
+   "evening/rain": {
+    "mean": 97.24,
+    "sd": 1.743,
+    "min": 94.7,
+    "max": 99.7
+   },
+   "night/clear": {
+    "mean": 97.42,
+    "sd": 1.486,
+    "min": 95.8,
+    "max": 99.4
+   },
+   "night/fog": {
+    "mean": 99.3,
+    "sd": 0.551,
+    "min": 98.3,
+    "max": 99.7
+   }
+  },
+  "band90_coverage_model_only": {
+   "mean": 96.46,
+   "sd": 1.965,
+   "min": 94.7,
+   "max": 99.5
+  },
+  "deferral": {
+   "n_defer": {
+    "mean": 10.8,
+    "sd": 8.28,
+    "min": 4.0,
+    "max": 27.0
+   },
+   "n_switch": {
+    "mean": 73.6,
+    "sd": 14.179,
+    "min": 48.0,
+    "max": 89.0
+   }
+  }
+ },
+ "noisy": {
+  "n_worlds": 5,
+  "segments": {
+   "Harsh brakes per road-km (naive)": {
+    "spearman_segments": {
+     "mean": 0.018,
+     "sd": 0.071,
+     "min": -0.089,
+     "max": 0.131
+    },
+    "spearman_sparse_segments": {
+     "mean": -0.046,
+     "sd": 0.054,
+     "min": -0.117,
+     "max": 0.039
+    },
+    "spearman_segment_x_context": {
+     "mean": 0.018,
+     "sd": 0.066,
+     "min": -0.086,
+     "max": 0.122
+    },
+    "top10pct_lift": {
+     "mean": 1.706,
+     "sd": 0.174,
+     "min": 1.55,
+     "max": 2.03
+    },
+    "deviance_explained_pct": {
+     "mean": -13.82,
+     "sd": 5.769,
+     "min": -24.5,
+     "max": -7.0
+    }
+   },
+   "Crash history (smoothed rate)": {
+    "spearman_segments": {
+     "mean": 0.381,
+     "sd": 0.03,
+     "min": 0.349,
+     "max": 0.437
+    },
+    "spearman_sparse_segments": {
+     "mean": 0.172,
+     "sd": 0.055,
+     "min": 0.096,
+     "max": 0.261
+    },
+    "spearman_segment_x_context": {
+     "mean": 0.327,
+     "sd": 0.029,
+     "min": 0.295,
+     "max": 0.378
+    },
+    "top10pct_lift": {
+     "mean": 2.714,
+     "sd": 0.605,
+     "min": 1.92,
+     "max": 3.44
+    },
+    "deviance_explained_pct": {
+     "mean": 3.2,
+     "sd": 3.06,
+     "min": -0.8,
+     "max": 7.1
+    }
+   },
+   "Harsh brakes per veh-km (smoothed)": {
+    "spearman_segments": {
+     "mean": 0.573,
+     "sd": 0.025,
+     "min": 0.535,
+     "max": 0.607
+    },
+    "spearman_sparse_segments": {
+     "mean": 0.375,
+     "sd": 0.011,
+     "min": 0.361,
+     "max": 0.389
+    },
+    "spearman_segment_x_context": {
+     "mean": 0.473,
+     "sd": 0.024,
+     "min": 0.442,
+     "max": 0.506
+    },
+    "top10pct_lift": {
+     "mean": 2.79,
+     "sd": 0.636,
+     "min": 1.87,
+     "max": 3.58
+    },
+    "deviance_explained_pct": {
+     "mean": 6.62,
+     "sd": 2.81,
+     "min": 3.1,
+     "max": 10.7
+    }
+   },
+   "Road features only": {
+    "spearman_segments": {
+     "mean": 0.685,
+     "sd": 0.019,
+     "min": 0.656,
+     "max": 0.714
+    },
+    "spearman_sparse_segments": {
+     "mean": 0.656,
+     "sd": 0.025,
+     "min": 0.623,
+     "max": 0.687
+    },
+    "spearman_segment_x_context": {
+     "mean": 0.8,
+     "sd": 0.011,
+     "min": 0.779,
+     "max": 0.812
+    },
+    "top10pct_lift": {
+     "mean": 2.862,
+     "sd": 0.556,
+     "min": 1.95,
+     "max": 3.55
+    },
+    "deviance_explained_pct": {
+     "mean": 11.02,
+     "sd": 2.449,
+     "min": 8.5,
+     "max": 14.8
+    }
+   },
+   "Road features + EB": {
+    "spearman_segments": {
+     "mean": 0.702,
+     "sd": 0.012,
+     "min": 0.686,
+     "max": 0.72
+    },
+    "spearman_sparse_segments": {
+     "mean": 0.657,
+     "sd": 0.028,
+     "min": 0.618,
+     "max": 0.691
+    },
+    "spearman_segment_x_context": {
+     "mean": 0.808,
+     "sd": 0.008,
+     "min": 0.795,
+     "max": 0.816
+    },
+    "top10pct_lift": {
+     "mean": 2.99,
+     "sd": 0.603,
+     "min": 2.05,
+     "max": 3.82
+    },
+    "deviance_explained_pct": {
+     "mean": 14.84,
+     "sd": 2.215,
+     "min": 12.0,
+     "max": 17.2
+    }
+   },
+   "Road + telematics, no EB": {
+    "spearman_segments": {
+     "mean": 0.737,
+     "sd": 0.029,
+     "min": 0.698,
+     "max": 0.77
+    },
+    "spearman_sparse_segments": {
+     "mean": 0.7,
+     "sd": 0.028,
+     "min": 0.672,
+     "max": 0.749
+    },
+    "spearman_segment_x_context": {
+     "mean": 0.813,
+     "sd": 0.022,
+     "min": 0.787,
+     "max": 0.846
+    },
+    "top10pct_lift": {
+     "mean": 2.904,
+     "sd": 0.601,
+     "min": 1.88,
+     "max": 3.56
+    },
+    "deviance_explained_pct": {
+     "mean": 10.06,
+     "sd": 2.868,
+     "min": 6.8,
+     "max": 14.0
+    }
+   },
+   "RakshaMarg, crash-only target": {
+    "spearman_segments": {
+     "mean": 0.681,
+     "sd": 0.012,
+     "min": 0.664,
+     "max": 0.698
+    },
+    "spearman_sparse_segments": {
+     "mean": 0.646,
+     "sd": 0.03,
+     "min": 0.59,
+     "max": 0.675
+    },
+    "spearman_segment_x_context": {
+     "mean": 0.731,
+     "sd": 0.036,
+     "min": 0.692,
+     "max": 0.779
+    },
+    "top10pct_lift": {
+     "mean": 2.988,
+     "sd": 0.458,
+     "min": 2.3,
+     "max": 3.51
+    },
+    "deviance_explained_pct": {
+     "mean": 14.08,
+     "sd": 1.612,
+     "min": 11.5,
+     "max": 16.4
+    }
+   },
+   "RakshaMarg, trees only (no GLM base)": {
+    "spearman_segments": {
+     "mean": 0.745,
+     "sd": 0.025,
+     "min": 0.713,
+     "max": 0.772
+    },
+    "spearman_sparse_segments": {
+     "mean": 0.701,
+     "sd": 0.034,
+     "min": 0.662,
+     "max": 0.752
+    },
+    "spearman_segment_x_context": {
+     "mean": 0.817,
+     "sd": 0.018,
+     "min": 0.793,
+     "max": 0.844
+    },
+    "top10pct_lift": {
+     "mean": 2.916,
+     "sd": 0.578,
+     "min": 1.98,
+     "max": 3.73
+    },
+    "deviance_explained_pct": {
+     "mean": 13.92,
+     "sd": 2.598,
+     "min": 10.5,
+     "max": 17.0
+    }
+   },
+   "RakshaMarg (full)": {
+    "spearman_segments": {
+     "mean": 0.749,
+     "sd": 0.024,
+     "min": 0.718,
+     "max": 0.775
+    },
+    "spearman_sparse_segments": {
+     "mean": 0.699,
+     "sd": 0.032,
+     "min": 0.663,
+     "max": 0.749
+    },
+    "spearman_segment_x_context": {
+     "mean": 0.822,
+     "sd": 0.02,
+     "min": 0.791,
+     "max": 0.847
+    },
+    "top10pct_lift": {
+     "mean": 2.93,
+     "sd": 0.584,
+     "min": 1.98,
+     "max": 3.74
+    },
+    "deviance_explained_pct": {
+     "mean": 14.16,
+     "sd": 2.46,
+     "min": 10.8,
+     "max": 17.2
+    }
+   },
+   "RakshaMarg + braking blend": {
+    "spearman_segments": {
+     "mean": 0.733,
+     "sd": 0.036,
+     "min": 0.686,
+     "max": 0.784
+    },
+    "spearman_sparse_segments": {
+     "mean": 0.683,
+     "sd": 0.039,
+     "min": 0.648,
+     "max": 0.754
+    },
+    "spearman_segment_x_context": {
+     "mean": 0.819,
+     "sd": 0.021,
+     "min": 0.79,
+     "max": 0.844
+    },
+    "top10pct_lift": {
+     "mean": 3.102,
+     "sd": 0.591,
+     "min": 2.15,
+     "max": 3.76
+    },
+    "deviance_explained_pct": {
+     "mean": 16.04,
+     "sd": 2.679,
+     "min": 12.6,
+     "max": 19.5
+    }
+   },
+   "Oracle (true risk)": {
+    "spearman_segments": {
+     "mean": 1.0,
+     "sd": 0.0,
+     "min": 1.0,
+     "max": 1.0
+    },
+    "spearman_sparse_segments": {
+     "mean": 1.0,
+     "sd": 0.0,
+     "min": 1.0,
+     "max": 1.0
+    },
+    "spearman_segment_x_context": {
+     "mean": 1.0,
+     "sd": 0.0,
+     "min": 1.0,
+     "max": 1.0
+    },
+    "top10pct_lift": {
+     "mean": 3.414,
+     "sd": 0.549,
+     "min": 2.61,
+     "max": 3.98
+    },
+    "deviance_explained_pct": {
+     "mean": 18.38,
+     "sd": 2.374,
+     "min": 15.2,
+     "max": 20.9
+    }
+   }
+  },
+  "matched_budget": {
+   "Crash history": {
+    "+1%": {
+     "mean": 3.28,
+     "sd": 3.505,
+     "min": -2.1,
+     "max": 7.0
+    },
+    "+2%": {
+     "mean": 4.72,
+     "sd": 3.689,
+     "min": -1.0,
+     "max": 8.2
+    },
+    "+4%": {
+     "mean": 8.88,
+     "sd": 2.524,
+     "min": 5.3,
+     "max": 11.6
+    }
+   },
+   "Harsh brakes per veh-km": {
+    "+1%": {
+     "mean": 4.34,
+     "sd": 5.377,
+     "min": -3.5,
+     "max": 9.1
+    },
+    "+2%": {
+     "mean": 6.24,
+     "sd": 5.64,
+     "min": -0.6,
+     "max": 13.1
+    },
+    "+4%": {
+     "mean": 9.82,
+     "sd": 6.413,
+     "min": 3.0,
+     "max": 19.2
+    }
+   },
+   "RakshaMarg": {
+    "+1%": {
+     "mean": 6.8,
+     "sd": 1.553,
+     "min": 4.9,
+     "max": 8.9
+    },
+    "+2%": {
+     "mean": 9.1,
+     "sd": 1.766,
+     "min": 7.0,
+     "max": 11.6
+    },
+    "+4%": {
+     "mean": 14.72,
+     "sd": 3.31,
+     "min": 10.2,
+     "max": 19.1
+    }
+   },
+   "RakshaMarg + braking blend": {
+    "+1%": {
+     "mean": 8.14,
+     "sd": 1.493,
+     "min": 5.5,
+     "max": 9.9
+    },
+    "+2%": {
+     "mean": 11.18,
+     "sd": 1.813,
+     "min": 7.8,
+     "max": 12.9
+    },
+    "+4%": {
+     "mean": 18.26,
+     "sd": 2.613,
+     "min": 13.6,
+     "max": 20.7
+    }
+   },
+   "RakshaMarg + braking blend, point estimate": {
+    "+1%": {
+     "mean": 8.28,
+     "sd": 1.501,
+     "min": 5.6,
+     "max": 9.9
+    },
+    "+2%": {
+     "mean": 11.44,
+     "sd": 1.798,
+     "min": 8.0,
+     "max": 13.0
+    },
+    "+4%": {
+     "mean": 18.3,
+     "sd": 2.605,
+     "min": 13.8,
+     "max": 20.9
+    }
+   },
+   "Road features only": {
+    "+1%": {
+     "mean": 6.98,
+     "sd": 1.69,
+     "min": 4.4,
+     "max": 9.2
+    },
+    "+2%": {
+     "mean": 9.46,
+     "sd": 1.646,
+     "min": 6.5,
+     "max": 11.3
+    },
+    "+4%": {
+     "mean": 14.72,
+     "sd": 2.909,
+     "min": 9.2,
+     "max": 17.0
+    }
+   }
+  },
+  "policy": {
+   "RakshaMarg": {
+    "true_risk_reduction_pct": {
+     "mean": 11.96,
+     "sd": 3.222,
+     "min": 7.0,
+     "max": 15.3
+    },
+    "extra_travel_time_pct": {
+     "mean": 2.216,
+     "sd": 0.187,
+     "min": 2.0,
+     "max": 2.5
+    },
+    "switches_truly_safer_pct": {
+     "mean": 93.62,
+     "sd": 4.089,
+     "min": 87.4,
+     "max": 99.0
+    },
+    "deferred_pct": {
+     "mean": 1.84,
+     "sd": 1.297,
+     "min": 0.4,
+     "max": 3.8
+    }
+   },
+   "RakshaMarg + braking blend": {
+    "true_risk_reduction_pct": {
+     "mean": 12.96,
+     "sd": 3.895,
+     "min": 6.1,
+     "max": 17.4
+    },
+    "extra_travel_time_pct": {
+     "mean": 1.648,
+     "sd": 0.376,
+     "min": 1.13,
+     "max": 2.08
+    },
+    "switches_truly_safer_pct": {
+     "mean": 97.2,
+     "sd": 2.384,
+     "min": 93.1,
+     "max": 100.0
+    },
+    "deferred_pct": {
+     "mean": 4.7,
+     "sd": 2.48,
+     "min": 1.2,
+     "max": 8.8
+    }
+   },
+   "Harsh brakes per veh-km": {
+    "true_risk_reduction_pct": {
+     "mean": 6.68,
+     "sd": 3.65,
+     "min": 1.8,
+     "max": 11.2
+    },
+    "extra_travel_time_pct": {
+     "mean": 1.456,
+     "sd": 0.304,
+     "min": 0.93,
+     "max": 1.8
+    },
+    "switches_truly_safer_pct": {
+     "mean": 83.6,
+     "sd": 8.242,
+     "min": 70.7,
+     "max": 94.9
+    },
+    "deferred_pct": {
+     "mean": 0.0,
+     "sd": 0.0,
+     "min": 0.0,
+     "max": 0.0
+    }
+   },
+   "Crash history": {
+    "true_risk_reduction_pct": {
+     "mean": 6.18,
+     "sd": 2.859,
+     "min": 1.8,
+     "max": 9.6
+    },
+    "extra_travel_time_pct": {
+     "mean": 2.486,
+     "sd": 0.209,
+     "min": 2.16,
+     "max": 2.76
+    },
+    "switches_truly_safer_pct": {
+     "mean": 74.06,
+     "sd": 6.169,
+     "min": 62.2,
+     "max": 78.7
+    },
+    "deferred_pct": {
+     "mean": 0.0,
+     "sd": 0.0,
+     "min": 0.0,
+     "max": 0.0
+    }
+   },
+   "Road features only": {
+    "true_risk_reduction_pct": {
+     "mean": 12.14,
+     "sd": 2.571,
+     "min": 7.3,
+     "max": 14.5
+    },
+    "extra_travel_time_pct": {
+     "mean": 2.43,
+     "sd": 0.262,
+     "min": 2.05,
+     "max": 2.81
+    },
+    "switches_truly_safer_pct": {
+     "mean": 89.48,
+     "sd": 5.89,
+     "min": 79.8,
+     "max": 96.3
+    },
+    "deferred_pct": {
+     "mean": 0.0,
+     "sd": 0.0,
+     "min": 0.0,
+     "max": 0.0
+    }
+   }
+  },
+  "band90_coverage": {
+   "mean": 96.38,
+   "sd": 0.979,
+   "min": 95.0,
+   "max": 97.7
+  },
+  "band90_coverage_by_context": {
+   "day/clear": {
+    "mean": 97.58,
+    "sd": 2.131,
+    "min": 94.3,
+    "max": 100.0
+   },
+   "evening/rain": {
+    "mean": 93.14,
+    "sd": 2.305,
+    "min": 89.5,
+    "max": 96.1
+   },
+   "night/clear": {
+    "mean": 96.42,
+    "sd": 1.994,
+    "min": 93.0,
+    "max": 98.8
+   },
+   "night/fog": {
+    "mean": 98.28,
+    "sd": 1.286,
+    "min": 96.0,
+    "max": 100.0
+   }
+  },
+  "band90_coverage_model_only": {
+   "mean": 90.24,
+   "sd": 6.19,
+   "min": 78.1,
+   "max": 94.8
+  },
+  "deferral": {
+   "n_defer": {
+    "mean": 11.2,
+    "sd": 5.879,
+    "min": 3.0,
+    "max": 21.0
+   },
+   "n_switch": {
+    "mean": 69.0,
+    "sd": 11.967,
+    "min": 54.0,
+    "max": 86.0
+   }
+  }
+ }
+}

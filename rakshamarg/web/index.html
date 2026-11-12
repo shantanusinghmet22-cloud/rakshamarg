@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RakshaMarg · Pre-dispatch route risk console</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛣️</text></svg>">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<style>
+:root{--bg:#F4F6F9;--surf:#FFFFFF;--surf2:#EEF1F5;--ink:#1B2430;--ink2:#4A5566;--mute:#7A8596;--line:#D5DAE1;
+  --green:#1F9D63;--green-bg:#E5F5EC;--amber:#B07A00;--amber-bg:#FFF4D6;--red:#C93A3A;--red-bg:#FBE9E9;--blue:#2C6E9B;--blue-bg:#E6F0F7;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#0E141C;--surf:#17202B;--surf2:#1F2A37;--ink:#EEF2F6;--ink2:#B4BDC9;--mute:#8792A2;--line:#2E3A49;
+  --green:#3CC283;--green-bg:#123527;--amber:#F2B53A;--amber-bg:#3A2E10;--red:#F07070;--red-bg:#3D1C1C;--blue:#6AAEDB;--blue-bg:#14293A;color-scheme:dark}}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Calibri,Carlito,"Segoe UI",Roboto,Arial,sans-serif;font-size:15px}
+header{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:12px 20px;background:var(--surf);border-bottom:1px solid var(--line)}
+.brand{font-size:22px;font-weight:700}.brand span{color:var(--green)}.sub{color:var(--ink2);font-size:14px}
+.modes{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}.chip{border:1px solid var(--line);background:var(--surf2);color:var(--ink);border-radius:18px;padding:7px 14px;cursor:pointer;font-size:14px}
+.chip.on{background:var(--ink);color:var(--surf);border-color:var(--ink)}
+nav.tabs{display:flex;gap:4px;padding:8px 20px 0;background:var(--surf);border-bottom:1px solid var(--line);overflow-x:auto}
+nav.tabs button{border:0;background:none;color:var(--ink2);padding:9px 14px;font-size:15px;cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap}
+nav.tabs button.on{color:var(--ink);border-bottom-color:var(--green);font-weight:700}
+main{padding:16px 20px 30px}.tab{display:none}.tab.on{display:block}
+.grid{display:grid;grid-template-columns:290px minmax(0,1fr) 400px;gap:16px;align-items:start}
+@media (max-width:1250px){.grid{grid-template-columns:270px minmax(0,1fr)}.grid>.card-col{grid-column:1/-1}}
+@media (max-width:760px){.grid{grid-template-columns:1fr}}
+.panel{background:var(--surf);border:1px solid var(--line);border-radius:12px;padding:14px}
+.panel h3{margin:0 0 10px;font-size:15px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink2)}
+label{display:block;font-size:13px;color:var(--ink2);margin:10px 0 4px}
+select,input[type=number],input[type=datetime-local],input[type=text]{width:100%;padding:7px 9px;border:1px solid var(--line);border-radius:8px;background:var(--surf);color:var(--ink);font-size:14px}
+input[type=range]{width:100%}.row{display:flex;gap:8px}.row>*{flex:1}
+.btn{display:inline-block;border:0;border-radius:9px;padding:9px 14px;font-size:14px;font-weight:700;cursor:pointer;background:var(--ink);color:var(--surf)}
+.btn.sec{background:var(--surf2);color:var(--ink);border:1px solid var(--line)}.btn.wide{width:100%;margin-top:12px}
+.ex{display:flex;flex-direction:column;gap:6px}.ex button{text-align:left;border:1px solid var(--line);background:var(--surf2);color:var(--ink);border-radius:8px;padding:7px 10px;cursor:pointer;font-size:13px}
+.ex button b{display:inline-block;min-width:62px}
+.mapwrap{background:var(--surf);border:1px solid var(--line);border-radius:12px;padding:8px;position:relative}
+#simsvg{width:100%;height:auto;display:block;cursor:crosshair;border-radius:8px;background:var(--surf2)}
+#rmap{height:620px;border-radius:8px}
+.maphint{font-size:13px;color:var(--ink2);padding:6px 4px 2px;display:flex;gap:14px;flex-wrap:wrap}.lg{display:inline-flex;align-items:center;gap:5px}
+.sw{display:inline-block;width:18px;height:4px;border-radius:2px}
+.dec{border-radius:14px;padding:14px;background:var(--surf);border:1px solid var(--line)}
+.badge{display:inline-block;color:#fff;font-weight:700;padding:6px 12px;border-radius:14px;font-size:14px;letter-spacing:.03em}
+.b-switch{background:var(--green)}.b-keep{background:#4A5566}.b-defer{background:#B07A00}.b-no_legal_route{background:#C93A3A}
+.msg{margin:10px 0 6px;font-size:15px}.pline{font-weight:700;margin:4px 0 8px}
+.opt{display:flex;justify-content:space-between;align-items:center;border:2px solid var(--line);border-radius:10px;padding:9px 11px;margin:8px 0;background:var(--surf)}
+.opt .t{font-weight:700}.opt .m{font-size:13px;color:var(--ink2)}.ri{font-size:30px;font-weight:700;text-align:right;line-height:1}.ri small{display:block;font-size:11px;font-weight:400;color:var(--ink2)}
+.reasons{margin:4px 0 0;padding-left:18px;font-size:14px}.reasons li{margin:3px 0}
+.brief{background:var(--green-bg);border-radius:10px;padding:10px 12px;margin-top:10px;font-size:14px}
+.brief .hi{font-family:"Nirmala UI","Kohinoor Devanagari","Noto Sans Devanagari",sans-serif;margin-top:6px}
+.note{font-size:12.5px;color:var(--ink2)}.ok{color:var(--green);font-weight:700}
+.banner{background:var(--amber-bg);border-radius:10px;padding:10px 12px;font-size:13.5px;margin-bottom:10px}
+table{border-collapse:collapse;width:100%;font-size:13.5px}th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line)}th{color:var(--ink2);font-weight:700}
+.tablewrap{overflow-x:auto}.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:14px}
+.kpi{background:var(--surf);border:1px solid var(--line);border-radius:12px;padding:12px}.kpi b{display:block;font-size:26px;color:var(--green)}.kpi span{font-size:13px;color:var(--ink2)}
+.zone{border:1px solid var(--line);border-radius:8px;padding:8px;margin-top:8px;font-size:13px}.zone .row{margin-top:6px}
+details summary{cursor:pointer;color:var(--ink2);font-size:13px;margin-top:8px}
+footer{padding:14px 20px;color:var(--mute);font-size:12.5px;border-top:1px solid var(--line);background:var(--surf)}
+.pill{display:inline-block;background:var(--amber-bg);color:var(--ink);border-radius:10px;padding:2px 8px;font-size:12px;font-weight:700}
+.cols2{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media (max-width:900px){.cols2{grid-template-columns:1fr}}
+.prose{max-width:900px;line-height:1.5}.prose h2{margin-top:22px}
+</style>
+</head>
+<body>
+<header>
+  <div><div class="brand">Raksha<span>Marg</span></div><div class="sub">Pre-dispatch route risk console · switch, keep, defer, or flag no legal route</div></div>
+  <div class="modes" role="tablist" aria-label="Data mode">
+    <button class="chip on" id="mode-sim">Fleet demo region <span class="pill">simulated data</span></button>
+    <button class="chip" id="mode-real">Real roads: NH-19 Prayagraj <span class="pill">experimental</span></button>
+  </div>
+</header>
+<nav class="tabs">
+  <button data-tab="dispatch" class="on">Dispatch</button><button data-tab="log">Trip log</button><button data-tab="hotspots">Hotspots</button>
+  <button data-tab="analytics">Analytics</button><button data-tab="evidence">Evidence</button><button data-tab="how">How it works</button>
+</nav>
+<main>
+  <section class="tab on" id="tab-dispatch">
+    <div class="grid">
+      <div class="panel" id="controls"></div>
+      <div class="mapwrap" id="mapwrap"><div id="simwrap"><svg id="simsvg" role="img" aria-label="Road network risk map"></svg></div>
+        <div id="realwrap" style="display:none"><div id="rmap"></div></div><div class="maphint" id="maphint"></div></div>
+      <div class="card-col" id="decision"></div>
+    </div>
+  </section>
+  <section class="tab" id="tab-log"></section>
+  <section class="tab" id="tab-hotspots"></section>
+  <section class="tab" id="tab-analytics"></section>
+  <section class="tab" id="tab-evidence"></section>
+  <section class="tab" id="tab-how"></section>
+</main>
+<footer id="foot"></footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<!--ENGINE--><!--DATA--><!--APP-->
+</body>
+</html>

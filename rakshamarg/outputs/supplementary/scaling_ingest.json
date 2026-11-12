@@ -1,0 +1,17 @@
+[
+ {
+  "events": 100000,
+  "seconds": 0.18,
+  "events_per_second": 569285
+ },
+ {
+  "events": 400000,
+  "seconds": 0.62,
+  "events_per_second": 649814
+ },
+ {
+  "events": 1600000,
+  "seconds": 2.38,
+  "events_per_second": 671846
+ }
+]

@@ -1,0 +1,2 @@
+# Browser end-to-end tests and demo recording only (not needed to run the console or API)
+playwright==1.63.0

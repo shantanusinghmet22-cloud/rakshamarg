@@ -1,0 +1,51 @@
+seed,fidelity,method,seg,seg_ctx
+202,faithful,Severe events per veh-km (smoothed),0.6693245123379132,0.5671905128544606
+202,faithful,Severe events per veh-km x context,0.6693245123379132,0.7210779626104185
+202,faithful,Braking per veh-km x context,0.6667619134386612,0.7183323792218389
+202,faithful,RakshaMarg model (released pipeline),0.8210167862720208,0.8798588262591499
+202,faithful,RakshaMarg model (counts from cleaned events),0.8253922161029125,0.879870258249091
+303,faithful,Severe events per veh-km (smoothed),0.6405636100548973,0.5338219410631874
+303,faithful,Severe events per veh-km x context,0.6405636100548973,0.7157476395497031
+303,faithful,Braking per veh-km x context,0.6651266842405217,0.7197157536940456
+303,faithful,RakshaMarg model (released pipeline),0.7802214685235547,0.8633349178774358
+303,faithful,RakshaMarg model (counts from cleaned events),0.7809140482496703,0.8607801437366579
+404,faithful,Severe events per veh-km (smoothed),0.5946112150847701,0.501576558690483
+404,faithful,Severe events per veh-km x context,0.5946112150847701,0.7074888586088808
+404,faithful,Braking per veh-km x context,0.6008022250172639,0.7085196227565915
+404,faithful,RakshaMarg model (released pipeline),0.7670700099894335,0.8495515917491047
+404,faithful,RakshaMarg model (counts from cleaned events),0.7668318344810579,0.8512059543225153
+505,faithful,Severe events per veh-km (smoothed),0.6548787222588717,0.5560175738056827
+505,faithful,Severe events per veh-km x context,0.6548787222588717,0.7293314922698777
+505,faithful,Braking per veh-km x context,0.6484303015775136,0.7227507449926941
+505,faithful,RakshaMarg model (released pipeline),0.7971797497622886,0.8664061421707514
+505,faithful,RakshaMarg model (counts from cleaned events),0.7990021113876243,0.8633650106461137
+606,faithful,Severe events per veh-km (smoothed),0.6591464678156307,0.5703694648983568
+606,faithful,Severe events per veh-km x context,0.6591464678156307,0.7204212151642196
+606,faithful,Braking per veh-km x context,0.6788569274441827,0.7241013660716787
+606,faithful,RakshaMarg model (released pipeline),0.8028211711360432,0.8740541592651252
+606,faithful,RakshaMarg model (counts from cleaned events),0.7965019186712313,0.8690800922118228
+202,noisy,Severe events per veh-km (smoothed),0.5497256004216011,0.46017466620680464
+202,noisy,Severe events per veh-km x context,0.5497256004216011,0.673890704604902
+202,noisy,Braking per veh-km x context,0.5623087791313787,0.6655915234207721
+202,noisy,RakshaMarg model (released pipeline),0.7630640873171803,0.8354780489226875
+202,noisy,RakshaMarg model (counts from cleaned events),0.7519823172992486,0.822258611529547
+303,noisy,Severe events per veh-km (smoothed),0.5547463618969658,0.469254671585008
+303,noisy,Severe events per veh-km x context,0.5547463618969658,0.6756638288972066
+303,noisy,Braking per veh-km x context,0.5696813003376932,0.680844788504131
+303,noisy,RakshaMarg model (released pipeline),0.719670658830944,0.7914414565026231
+303,noisy,RakshaMarg model (counts from cleaned events),0.7091359481113905,0.7870402636679548
+404,noisy,Severe events per veh-km (smoothed),0.5294971286189258,0.4396795978187669
+404,noisy,Severe events per veh-km x context,0.5294971286189258,0.6614228558129315
+404,noisy,Braking per veh-km x context,0.534611133841549,0.6794651853600248
+404,noisy,RakshaMarg model (released pipeline),0.7177225042978178,0.8094442323205085
+404,noisy,RakshaMarg model (counts from cleaned events),0.7036887606084439,0.7911975430139259
+505,noisy,Severe events per veh-km (smoothed),0.5797500996189126,0.4935633560953537
+505,noisy,Severe events per veh-km x context,0.5797500996189126,0.6798752066664382
+505,noisy,Braking per veh-km x context,0.5929710431099251,0.6948538258557453
+505,noisy,RakshaMarg model (released pipeline),0.7748439917383104,0.8276695684716816
+505,noisy,RakshaMarg model (counts from cleaned events),0.7676632767068503,0.8257064422337471
+606,noisy,Severe events per veh-km (smoothed),0.5829292156024388,0.5054109453575883
+606,noisy,Severe events per veh-km x context,0.5829292156024388,0.6889337110541625
+606,noisy,Braking per veh-km x context,0.6072368014126978,0.6912109168870303
+606,noisy,RakshaMarg model (released pipeline),0.7674975501501345,0.8469701762720242
+606,noisy,RakshaMarg model (counts from cleaned events),0.7593400488337748,0.8376452431996556

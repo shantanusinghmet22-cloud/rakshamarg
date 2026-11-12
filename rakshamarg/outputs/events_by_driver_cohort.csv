@@ -1,0 +1,4 @@
+driver_cohort,events,severity,note
+2-5 yrs,163021,190066.3,counts only: per-cohort exposure needs driver-level trip logs
+<2 yrs,177688,206991.7,counts only: per-cohort exposure needs driver-level trip logs
+>5 yrs,125339,145873.9,counts only: per-cohort exposure needs driver-level trip logs

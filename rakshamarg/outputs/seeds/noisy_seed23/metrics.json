@@ -1,0 +1,1127 @@
+{
+  "seed": 23,
+  "surrogate_fidelity": "noisy",
+  "data": "SIMULATED region with known ground truth",
+  "source_sha256_12": "d26a6e6bfe91",
+  "dispatch_scorer": "RakshaMarg + braking blend (geometric: model rate x sqrt(braking rate / model mean rate))",
+  "world": {
+    "segments": 532,
+    "network_km": 1253.6,
+    "veh_km": 13815639.0,
+    "raw_events": 354113,
+    "crashes": 612,
+    "near_misses": 29538,
+    "harsh_brakes": 220350,
+    "hidden_hazard_segments": 39,
+    "public_blackspot_segments": 18,
+    "truck_no_entry_segments": 23
+  },
+  "preprocess": {
+    "raw_rows": 354113,
+    "dropped_null_or_out_of_bbox": 1735,
+    "dropped_impossible_speed": 1736,
+    "dropped_duplicates": 3471,
+    "dropped_unmatched": 0,
+    "map_match_accuracy": 0.9869401534114313,
+    "clean_rows": 347171,
+    "events_per_second": 565126
+  },
+  "hotspots": {
+    "n": 39,
+    "top10_on_public_list": 6,
+    "top10_hidden_hazard_not_on_public_list": 2
+  },
+  "dispersion_phi_blend_by_time": {
+    "day": 0.174,
+    "evening": 0.383,
+    "night": 0.02
+  },
+  "eb_k": 1,
+  "dispersion_phi_by_time": {
+    "day": 0.318,
+    "evening": 0.289,
+    "night": 0.02
+  },
+  "evaluation_segments": {
+    "Harsh brakes per road-km (naive)": {
+      "spearman_segments": 0.009,
+      "spearman_sparse_segments": 0.072,
+      "spearman_segment_x_context": 0.011,
+      "top10pct_lift": 1.64,
+      "deviance_explained_pct": -17.0
+    },
+    "Crash history (smoothed rate)": {
+      "spearman_segments": 0.381,
+      "spearman_sparse_segments": 0.131,
+      "spearman_segment_x_context": 0.332,
+      "top10pct_lift": 2.9,
+      "deviance_explained_pct": 7.2
+    },
+    "Harsh brakes per veh-km (smoothed)": {
+      "spearman_segments": 0.52,
+      "spearman_sparse_segments": 0.375,
+      "spearman_segment_x_context": 0.458,
+      "top10pct_lift": 3.16,
+      "deviance_explained_pct": 9.3
+    },
+    "Road features only": {
+      "spearman_segments": 0.688,
+      "spearman_sparse_segments": 0.657,
+      "spearman_segment_x_context": 0.79,
+      "top10pct_lift": 3.29,
+      "deviance_explained_pct": 17.2
+    },
+    "Road features + EB": {
+      "spearman_segments": 0.708,
+      "spearman_sparse_segments": 0.658,
+      "spearman_segment_x_context": 0.803,
+      "top10pct_lift": 3.49,
+      "deviance_explained_pct": 18.6
+    },
+    "Road + telematics, no EB": {
+      "spearman_segments": 0.742,
+      "spearman_sparse_segments": 0.711,
+      "spearman_segment_x_context": 0.806,
+      "top10pct_lift": 2.99,
+      "deviance_explained_pct": 16.1
+    },
+    "RakshaMarg, crash-only target": {
+      "spearman_segments": 0.683,
+      "spearman_sparse_segments": 0.633,
+      "spearman_segment_x_context": 0.752,
+      "top10pct_lift": 3.33,
+      "deviance_explained_pct": 16.5
+    },
+    "RakshaMarg, trees only (no GLM base)": {
+      "spearman_segments": 0.749,
+      "spearman_sparse_segments": 0.693,
+      "spearman_segment_x_context": 0.818,
+      "top10pct_lift": 3.29,
+      "deviance_explained_pct": 17.7
+    },
+    "RakshaMarg (full)": {
+      "spearman_segments": 0.756,
+      "spearman_sparse_segments": 0.711,
+      "spearman_segment_x_context": 0.819,
+      "top10pct_lift": 3.38,
+      "deviance_explained_pct": 17.8
+    },
+    "RakshaMarg + braking blend": {
+      "spearman_segments": 0.722,
+      "spearman_sparse_segments": 0.676,
+      "spearman_segment_x_context": 0.801,
+      "top10pct_lift": 3.53,
+      "deviance_explained_pct": 17.9
+    },
+    "Oracle (true risk)": {
+      "spearman_segments": 1.0,
+      "spearman_sparse_segments": 1.0,
+      "spearman_segment_x_context": 1.0,
+      "top10pct_lift": 3.57,
+      "deviance_explained_pct": 21.4
+    }
+  },
+  "test_period": {
+    "months": "Oct-Dec (held out)",
+    "crashes": 153,
+    "veh_km": 3477831
+  },
+  "calibration_quintiles": {
+    "predicted": [
+      9.0,
+      13.5,
+      24.5,
+      29.8,
+      64.9
+    ],
+    "observed": [
+      13,
+      16,
+      26,
+      31,
+      67
+    ]
+  },
+  "integrity": {
+    "decisions_checked": 1200,
+    "inconsistent": 0
+  },
+  "evaluation_routes": {
+    "no_legal_route_trips": {
+      "Crash history": 0,
+      "Harsh brakes per veh-km": 0,
+      "RakshaMarg": 0,
+      "RakshaMarg + braking blend": 0,
+      "Road features only": 0
+    },
+    "Crash history": {
+      "switched_pct": 50.8,
+      "deferred_pct": 0.0,
+      "true_risk_reduction_pct": 8.5,
+      "extra_travel_time_pct": 2.16,
+      "switches_truly_safer_pct": 80.3
+    },
+    "Harsh brakes per veh-km": {
+      "switched_pct": 25.4,
+      "deferred_pct": 0.0,
+      "true_risk_reduction_pct": 4.4,
+      "extra_travel_time_pct": 1.02,
+      "switches_truly_safer_pct": 85.2
+    },
+    "RakshaMarg": {
+      "switched_pct": 39.2,
+      "deferred_pct": 1.2,
+      "true_risk_reduction_pct": 10.4,
+      "extra_travel_time_pct": 1.93,
+      "switches_truly_safer_pct": 93.6
+    },
+    "RakshaMarg + braking blend": {
+      "switched_pct": 24.6,
+      "deferred_pct": 2.5,
+      "true_risk_reduction_pct": 7.0,
+      "extra_travel_time_pct": 1.0,
+      "switches_truly_safer_pct": 98.3
+    },
+    "Road features only": {
+      "switched_pct": 48.8,
+      "deferred_pct": 0.0,
+      "true_risk_reduction_pct": 12.6,
+      "extra_travel_time_pct": 2.55,
+      "switches_truly_safer_pct": 93.2
+    },
+    "deferral_analysis": {
+      "n_trips": 240,
+      "n_switch": 59,
+      "n_keep": 175,
+      "n_defer": 6,
+      "scorer": "RakshaMarg + braking blend",
+      "deferred_alternatives_truly_safer_pct": 83.3,
+      "switches_truly_safer_pct_without_deferral": 96.9
+    },
+    "band90_coverage_by_scorer": {
+      "RakshaMarg": {
+        "overall": 89.8,
+        "by_context": {
+          "day/clear": 97.6,
+          "evening/rain": 97.5,
+          "night/clear": 73.1,
+          "night/fog": 90.8
+        }
+      },
+      "RakshaMarg + braking blend": {
+        "overall": 96.2,
+        "by_context": {
+          "day/clear": 98.7,
+          "evening/rain": 96.9,
+          "night/clear": 93.9,
+          "night/fog": 95.5
+        }
+      }
+    },
+    "band90_coverage_pct": 96.2,
+    "band90_coverage_by_context_pct": {
+      "day/clear": 98.7,
+      "evening/rain": 96.9,
+      "night/clear": 93.9,
+      "night/fog": 95.5
+    },
+    "route_score_spearman_vs_truth": 0.965,
+    "matched_budget_curves": {
+      "Crash history": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.54,
+          3.42
+        ],
+        [
+          1.43,
+          6.65
+        ],
+        [
+          2.19,
+          7.69
+        ],
+        [
+          2.9,
+          7.81
+        ],
+        [
+          3.29,
+          9.08
+        ],
+        [
+          4.23,
+          9.63
+        ],
+        [
+          5.92,
+          9.66
+        ],
+        [
+          8.76,
+          12.13
+        ],
+        [
+          15.21,
+          13.76
+        ]
+      ],
+      "Harsh brakes per veh-km": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.48,
+          3.0
+        ],
+        [
+          1.19,
+          4.94
+        ],
+        [
+          1.76,
+          6.38
+        ],
+        [
+          2.49,
+          8.58
+        ],
+        [
+          3.12,
+          9.62
+        ],
+        [
+          3.7,
+          10.36
+        ],
+        [
+          4.86,
+          12.1
+        ],
+        [
+          6.44,
+          15.44
+        ],
+        [
+          9.06,
+          15.57
+        ]
+      ],
+      "RakshaMarg": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.52,
+          4.82
+        ],
+        [
+          1.23,
+          9.14
+        ],
+        [
+          1.84,
+          12.18
+        ],
+        [
+          2.42,
+          12.85
+        ],
+        [
+          3.14,
+          13.88
+        ],
+        [
+          4.12,
+          15.66
+        ],
+        [
+          5.98,
+          19.31
+        ],
+        [
+          8.86,
+          22.21
+        ],
+        [
+          13.36,
+          25.84
+        ]
+      ],
+      "RakshaMarg + braking blend": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.52,
+          4.71
+        ],
+        [
+          1.22,
+          8.72
+        ],
+        [
+          1.66,
+          10.64
+        ],
+        [
+          2.2,
+          11.62
+        ],
+        [
+          2.82,
+          12.65
+        ],
+        [
+          3.55,
+          13.54
+        ],
+        [
+          4.75,
+          15.43
+        ],
+        [
+          6.7,
+          19.29
+        ],
+        [
+          9.0,
+          22.99
+        ]
+      ],
+      "RakshaMarg + braking blend, point estimate": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.53,
+          4.83
+        ],
+        [
+          1.23,
+          8.73
+        ],
+        [
+          1.72,
+          10.75
+        ],
+        [
+          2.27,
+          11.6
+        ],
+        [
+          2.89,
+          12.69
+        ],
+        [
+          3.64,
+          13.59
+        ],
+        [
+          4.83,
+          15.47
+        ],
+        [
+          6.93,
+          20.24
+        ],
+        [
+          9.26,
+          23.94
+        ]
+      ],
+      "Road features only": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.54,
+          4.49
+        ],
+        [
+          1.41,
+          8.91
+        ],
+        [
+          2.16,
+          11.25
+        ],
+        [
+          2.99,
+          11.78
+        ],
+        [
+          3.76,
+          11.96
+        ],
+        [
+          4.96,
+          13.48
+        ],
+        [
+          6.55,
+          16.11
+        ],
+        [
+          9.23,
+          20.41
+        ],
+        [
+          12.55,
+          23.08
+        ]
+      ]
+    },
+    "true_risk_reduction_at_fleet_extra_time": {
+      "+1%": {
+        "Crash history": 5.1,
+        "Harsh brakes per veh-km": 4.4,
+        "RakshaMarg": 7.7,
+        "RakshaMarg + braking blend": 7.5,
+        "RakshaMarg + braking blend, point estimate": 7.4,
+        "Road features only": 6.8
+      },
+      "+2%": {
+        "Crash history": 7.4,
+        "Harsh brakes per veh-km": 7.1,
+        "RakshaMarg": 12.4,
+        "RakshaMarg + braking blend": 11.3,
+        "RakshaMarg + braking blend, point estimate": 11.2,
+        "Road features only": 10.8
+      },
+      "+4%": {
+        "Crash history": 9.5,
+        "Harsh brakes per veh-km": 10.8,
+        "RakshaMarg": 15.4,
+        "RakshaMarg + braking blend": 14.2,
+        "RakshaMarg + braking blend, point estimate": 14.2,
+        "Road features only": 12.3
+      }
+    }
+  },
+  "microbenchmarks": {
+    "note": "single CPU core, in-process, 523-segment synthetic graph; not a service load test",
+    "cached_route_sum_ms": 0.0037,
+    "full_decision_ms": 18.6,
+    "preprocess_events_per_second": 565126
+  },
+  "cases": {
+    "selected_switch": {
+      "label": "selected",
+      "scorer": "RakshaMarg + braking blend",
+      "origin": [
+        1,
+        0
+      ],
+      "destination": [
+        21,
+        4
+      ],
+      "context": "night/fog",
+      "decision": "switch",
+      "p_safer": 0.993,
+      "n_qualifying": 2,
+      "fastest": {
+        "time_min": 82.7,
+        "km": 64.0,
+        "risk_index": 80,
+        "exp_per_1000": 7.23,
+        "risk_80pct": 8.58,
+        "band90": [
+          4.38,
+          10.75
+        ],
+        "confidence": "Medium",
+        "true_per_1000": 7.01,
+        "eids": [
+          27,
+          29,
+          31,
+          32,
+          56,
+          58,
+          60,
+          62,
+          63,
+          88,
+          112,
+          137,
+          162,
+          186,
+          208,
+          233,
+          260,
+          281,
+          305,
+          325,
+          352,
+          378,
+          400,
+          427,
+          454,
+          481,
+          508,
+          525,
+          524,
+          523
+        ]
+      },
+      "considered": {
+        "time_min": 85.0,
+        "km": 53.8,
+        "risk_index": 51,
+        "exp_per_1000": 3.27,
+        "risk_80pct": 4.08,
+        "band90": [
+          1.72,
+          5.28
+        ],
+        "confidence": "Medium",
+        "true_per_1000": 2.51,
+        "eids": [
+          26,
+          49,
+          74,
+          98,
+          123,
+          148,
+          172,
+          197,
+          220,
+          246,
+          273,
+          293,
+          316,
+          317,
+          340,
+          366,
+          392,
+          415,
+          443,
+          445,
+          446,
+          473,
+          500,
+          522
+        ]
+      },
+      "chosen": {
+        "time_min": 85.0,
+        "km": 53.8,
+        "risk_index": 51,
+        "exp_per_1000": 3.27,
+        "risk_80pct": 4.08,
+        "band90": [
+          1.72,
+          5.28
+        ],
+        "confidence": "Medium",
+        "true_per_1000": 2.51,
+        "eids": [
+          26,
+          49,
+          74,
+          98,
+          123,
+          148,
+          172,
+          197,
+          220,
+          246,
+          273,
+          293,
+          316,
+          317,
+          340,
+          366,
+          392,
+          415,
+          443,
+          445,
+          446,
+          473,
+          500,
+          522
+        ]
+      },
+      "reasons_fastest": [
+        {
+          "edge_id": 63,
+          "road_class": "NH",
+          "km": 3.3,
+          "risk_share": 0.16,
+          "reasons": [
+            "2.9 median openings/km (U-turn & wrong-side conflicts)",
+            "unlit stretch after dark",
+            "fleet hotspot #13: 5463 harsh brakes, 705 near-misses"
+          ]
+        },
+        {
+          "edge_id": 352,
+          "road_class": "NH",
+          "km": 3.1,
+          "risk_share": 0.096,
+          "reasons": [
+            "1.8 median openings/km (U-turn & wrong-side conflicts)",
+            "unlit stretch after dark",
+            "fleet hotspot #34: 3280 harsh brakes, 441 near-misses"
+          ]
+        },
+        {
+          "edge_id": 137,
+          "road_class": "NH",
+          "km": 2.8,
+          "risk_share": 0.066,
+          "reasons": [
+            "2.2 median openings/km (U-turn & wrong-side conflicts)",
+            "unlit stretch after dark"
+          ]
+        }
+      ],
+      "considered_true_cut_pct": 64.2,
+      "predicted_cut_pct": 54.8,
+      "true_cut_pct": 64.2,
+      "extra_min": 2.3
+    },
+    "typical_switch": {
+      "label": "typical switch",
+      "scorer": "RakshaMarg + braking blend",
+      "origin": [
+        15,
+        7
+      ],
+      "destination": [
+        0,
+        13
+      ],
+      "context": "day/clear",
+      "decision": "switch",
+      "p_safer": 0.995,
+      "n_qualifying": 1,
+      "fastest": {
+        "time_min": 51.1,
+        "km": 45.8,
+        "risk_index": 68,
+        "exp_per_1000": 1.0,
+        "risk_80pct": 1.16,
+        "band90": [
+          0.65,
+          1.5
+        ],
+        "confidence": "Medium",
+        "true_per_1000": 0.99,
+        "eids": [
+          352,
+          325,
+          305,
+          281,
+          260,
+          233,
+          208,
+          186,
+          162,
+          137,
+          112,
+          88,
+          63,
+          37,
+          13,
+          14,
+          16,
+          18,
+          20,
+          22,
+          24
+        ]
+      },
+      "considered": {
+        "time_min": 52.3,
+        "km": 43.9,
+        "risk_index": 60,
+        "exp_per_1000": 0.79,
+        "risk_80pct": 0.92,
+        "band90": [
+          0.51,
+          1.19
+        ],
+        "confidence": "Medium",
+        "true_per_1000": 0.79,
+        "eids": [
+          352,
+          325,
+          305,
+          281,
+          260,
+          233,
+          208,
+          186,
+          162,
+          137,
+          112,
+          88,
+          89,
+          65,
+          38,
+          39,
+          41,
+          43,
+          45,
+          47,
+          25
+        ]
+      },
+      "chosen": {
+        "time_min": 52.3,
+        "km": 43.9,
+        "risk_index": 60,
+        "exp_per_1000": 0.79,
+        "risk_80pct": 0.92,
+        "band90": [
+          0.51,
+          1.19
+        ],
+        "confidence": "Medium",
+        "true_per_1000": 0.79,
+        "eids": [
+          352,
+          325,
+          305,
+          281,
+          260,
+          233,
+          208,
+          186,
+          162,
+          137,
+          112,
+          88,
+          89,
+          65,
+          38,
+          39,
+          41,
+          43,
+          45,
+          47,
+          25
+        ]
+      },
+      "reasons_fastest": [
+        {
+          "edge_id": 63,
+          "road_class": "NH",
+          "km": 3.3,
+          "risk_share": 0.14,
+          "reasons": [
+            "2.9 median openings/km (U-turn & wrong-side conflicts)",
+            "fleet hotspot #13: 5463 harsh brakes, 705 near-misses"
+          ]
+        },
+        {
+          "edge_id": 352,
+          "road_class": "NH",
+          "km": 3.1,
+          "risk_share": 0.086,
+          "reasons": [
+            "1.8 median openings/km (U-turn & wrong-side conflicts)",
+            "fleet hotspot #34: 3280 harsh brakes, 441 near-misses"
+          ]
+        },
+        {
+          "edge_id": 305,
+          "road_class": "NH",
+          "km": 2.0,
+          "risk_share": 0.073,
+          "reasons": [
+            "2.9 median openings/km (U-turn & wrong-side conflicts)"
+          ]
+        }
+      ],
+      "considered_true_cut_pct": 20.2,
+      "predicted_cut_pct": 21.0,
+      "true_cut_pct": 20.2,
+      "extra_min": 1.2
+    },
+    "typical_keep": {
+      "label": "typical keep",
+      "scorer": "RakshaMarg + braking blend",
+      "origin": [
+        14,
+        9
+      ],
+      "destination": [
+        19,
+        13
+      ],
+      "context": "night/clear",
+      "decision": "keep",
+      "p_safer": null,
+      "n_qualifying": 0,
+      "fastest": {
+        "time_min": 56.0,
+        "km": 40.2,
+        "risk_index": 69,
+        "exp_per_1000": 2.91,
+        "risk_80pct": 3.4,
+        "band90": [
+          1.85,
+          4.65
+        ],
+        "confidence": "Medium",
+        "true_per_1000": 3.71,
+        "eids": [
+          329,
+          328,
+          326,
+          325,
+          352,
+          378,
+          400,
+          427,
+          454,
+          481,
+          509,
+          510,
+          527,
+          528,
+          529,
+          515,
+          516,
+          517,
+          493
+        ]
+      },
+      "considered": null,
+      "chosen": {
+        "time_min": 56.0,
+        "km": 40.2,
+        "risk_index": 69,
+        "exp_per_1000": 2.91,
+        "risk_80pct": 3.4,
+        "band90": [
+          1.85,
+          4.65
+        ],
+        "confidence": "Medium",
+        "true_per_1000": 3.71,
+        "eids": [
+          329,
+          328,
+          326,
+          325,
+          352,
+          378,
+          400,
+          427,
+          454,
+          481,
+          509,
+          510,
+          527,
+          528,
+          529,
+          515,
+          516,
+          517,
+          493
+        ]
+      },
+      "reasons_fastest": [
+        {
+          "edge_id": 493,
+          "road_class": "GHAT",
+          "km": 2.8,
+          "risk_share": 0.27,
+          "reasons": [
+            "sharp curves (198 deg/km)",
+            "steep gradient (6.4%)",
+            "unlit stretch after dark",
+            "on public black-spot list"
+          ]
+        },
+        {
+          "edge_id": 329,
+          "road_class": "GHAT",
+          "km": 1.9,
+          "risk_share": 0.108,
+          "reasons": [
+            "sharp curves (184 deg/km)",
+            "steep gradient (6.0%)",
+            "unlit stretch after dark",
+            "fleet hotspot #17: 25 harsh brakes, 9 near-misses"
+          ]
+        },
+        {
+          "edge_id": 352,
+          "road_class": "NH",
+          "km": 3.1,
+          "risk_share": 0.105,
+          "reasons": [
+            "1.8 median openings/km (U-turn & wrong-side conflicts)",
+            "unlit stretch after dark",
+            "fleet hotspot #34: 3280 harsh brakes, 441 near-misses"
+          ]
+        }
+      ],
+      "predicted_cut_pct": 0.0,
+      "true_cut_pct": 0.0,
+      "extra_min": 0.0
+    },
+    "typical_defer": {
+      "label": "typical defer",
+      "scorer": "RakshaMarg + braking blend",
+      "origin": [
+        15,
+        12
+      ],
+      "destination": [
+        15,
+        2
+      ],
+      "context": "day/clear",
+      "decision": "defer",
+      "p_safer": 0.595,
+      "n_qualifying": 2,
+      "fastest": {
+        "time_min": 49.5,
+        "km": 26.6,
+        "risk_index": 81,
+        "exp_per_1000": 1.46,
+        "risk_80pct": 1.95,
+        "band90": [
+          0.57,
+          3.49
+        ],
+        "confidence": "Low",
+        "true_per_1000": 2.81,
+        "eids": [
+          387,
+          385,
+          383,
+          381,
+          379,
+          377,
+          375,
+          373,
+          371,
+          369
+        ]
+      },
+      "considered": {
+        "time_min": 51.3,
+        "km": 31.3,
+        "risk_index": 75,
+        "exp_per_1000": 1.22,
+        "risk_80pct": 1.54,
+        "band90": [
+          0.61,
+          2.42
+        ],
+        "confidence": "Low",
+        "true_per_1000": 1.45,
+        "eids": [
+          361,
+          335,
+          334,
+          332,
+          330,
+          328,
+          326,
+          325,
+          351,
+          350,
+          375,
+          373,
+          371,
+          369
+        ]
+      },
+      "chosen": {
+        "time_min": 49.5,
+        "km": 26.6,
+        "risk_index": 81,
+        "exp_per_1000": 1.46,
+        "risk_80pct": 1.95,
+        "band90": [
+          0.57,
+          3.49
+        ],
+        "confidence": "Low",
+        "true_per_1000": 2.81,
+        "eids": [
+          387,
+          385,
+          383,
+          381,
+          379,
+          377,
+          375,
+          373,
+          371,
+          369
+        ]
+      },
+      "reasons_fastest": [
+        {
+          "edge_id": 387,
+          "road_class": "GHAT",
+          "km": 4.5,
+          "risk_share": 0.309,
+          "reasons": [
+            "sharp curves (215 deg/km)",
+            "steep gradient (6.2%)",
+            "on public black-spot list"
+          ]
+        },
+        {
+          "edge_id": 381,
+          "road_class": "GHAT",
+          "km": 3.6,
+          "risk_share": 0.238,
+          "reasons": [
+            "sharp curves (199 deg/km)",
+            "steep gradient (7.0%)",
+            "on public black-spot list"
+          ]
+        },
+        {
+          "edge_id": 383,
+          "road_class": "GHAT",
+          "km": 3.1,
+          "risk_share": 0.176,
+          "reasons": [
+            "sharp curves (208 deg/km)",
+            "steep gradient (6.3%)"
+          ]
+        }
+      ],
+      "considered_true_cut_pct": 48.4,
+      "predicted_cut_pct": 0.0,
+      "true_cut_pct": 0.0,
+      "extra_min": 0.0
+    }
+  },
+  "trend_monthly_overall": [
+    31.4,
+    28.74,
+    27.09,
+    26.9,
+    26.33,
+    30.5,
+    30.43,
+    31.72,
+    33.16,
+    26.86,
+    27.68,
+    31.63
+  ],
+  "runtime_seconds": 73.3
+}

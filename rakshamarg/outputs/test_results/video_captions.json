@@ -1,0 +1,11 @@
+[
+ "A typical trip (simulated region). The alternative has 30% lower expected crashes for +2.0 min, and the model-based comparison probability is 0.995 (\u2265 0.90), so RakshaMarg says SWITCH.",
+ "The fleet sets the policy. If it demands a 50% risk reduction, the same trip no longer qualifies: KEEP FASTEST.",
+ "Selected illustration (the largest gain we found): night, dense fog. The fastest route runs along an unlit NH stretch with median cuts; the alternative has 64% lower expected crashes for +5.3 min.",
+ "Same trip by day in clear weather: the alternative still meets the policy, but the gain shrinks to 30% for +2.7 min. Context changes the decision.",
+ "Weak evidence: P = 0.897 is below the 0.90 threshold (and flagged as borderline). RakshaMarg does not guess: the trip is held for a supervisor.",
+ "The supervisor chooses the route; name, time and note are recorded in the trip's audit trail.",
+ "In a configured truck no-entry window every route crosses a closed street, so it reports BLOCKED BY RESTRICTIONS rather than routing through them.",
+ "After the trip, observed crashes and near-misses are compared with the prediction (excess severe events flagged). It is a monitoring signal, not proof of model accuracy.",
+ "Simulated holdout: at +2% driving time the deployed blend cuts true risk 11.4% vs 9.9% for road features alone (+1.5 points, lost in 1 of 5 worlds). Browser = archived Python on 300/300 cases."
+]

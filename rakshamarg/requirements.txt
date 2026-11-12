@@ -1,0 +1,10 @@
+# Exact versions used to produce the saved outputs (Python 3.12.3). Other versions may give different numbers.
+numpy==2.4.4
+pandas==3.0.2
+scikit-learn==1.8.0
+scipy==1.17.1
+networkx==3.6.1
+matplotlib==3.10.8
+fastapi==0.115.6
+httpx==0.28.1
+uvicorn==0.34.0
